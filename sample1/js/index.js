@@ -1,9 +1,12 @@
+var bg;
 function setup(){
-    createCanvas(400, 400);
-    background("#fff");
+    // bg = loadImage('./tarot.png');背景画像
+    createCanvas(352, 500);
+    // background("#fff");
 }
 
 function draw(){
+    // background(bg);
     drawSprites();
 }
 
