@@ -23,17 +23,22 @@
 			overflow: hidden;
 			font-size: 10px;
 		}
+		#flex {
+
+		display: flex;
+		}
 		#myCanvas {
 		/*width: 188px;*/
-		overflow: hidden;
+		/*overflow: hidden;*/
 		margin: 0 auto;
 		}
-		#defaultCanvas0 {
+		#defaultCanvas0, #defaultCanvas1, #defaultCanvas2 {
 			background-image: url(./tarot1.png);
 			background-repeat: no-repeat;
 			background-position: 50%;
 			margin: 0 auto;
-			display: block;
+			width: 33%;
+			background-size: 95%;
 		}
 		.wrap {
 			margin-bottom: 30px;
@@ -67,9 +72,25 @@
 	<!--<button value="カードを配り直す" class="js-distribute button button__distribute">カードを配り直す</button>-->
 	<!--<button value="やり直す" class="js-redraw button button__redraw">やり直す</button>-->
 <!--</div>-->
+<div id="flex">
 <div id="myCanvas" class="off"></div>
+<div id="myCanvas2" class="off"></div>
+<div id="myCanvas3" class="off"></div>
+	</div>
 <script>
-	$('#myCanvas').css('display', 'none').addClass('fadeInDown').fadeIn(1500);
+	var canvas1 = function(){
+		$('#myCanvas').css('display', 'none').addClass('fadeInDown').fadeIn(1500);
+	}
+	var canvas2 = function(){
+		$('#myCanvas2').css('display', 'none').addClass('fadeInDown').fadeIn(1500);
+	}
+	var canvas3 = function() {
+		$('#myCanvas3').css('display', 'none').addClass('fadeInDown').fadeIn(1500);
+	}
+	canvas1();
+	canvas2();
+	canvas3();
+
 </script>
 <script type="text/javascript">
 	if (Modernizr.webgl) {
