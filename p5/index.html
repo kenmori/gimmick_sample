@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+	<title>p5サンプル</title>
+	<script type="text/javascript" src="js/p5/p5.min.js"></script>
+	<script type="text/javascript" src="js/p5.play.js"></script>
+	<script type='text/javascript' src='js/p5/empty-example/libraries/p5.dom.js'></script>
+	<script type="text/javascript" src="js/disableScroll.js"></script>
+	<script type="text/javascript" src="js/anime.js"></script>
+	<script
+			src="https://code.jquery.com/jquery-1.12.4.js"
+			integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+			crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/modernizr-custom.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<style>
+		body {
+			background: #faf3f3;
+			/*overflow: hidden;*/
+		}
+		#defaultCanvas0 {
+			background-image: url(./tarot1.png);
+			background-repeat: no-repeat;
+			/*width: 300px;*/
+			background-size: 50%;
+			/*height: 300px;*/
+			margin: 0 auto;
+			display: block;
+		}
+		.no-webgl .box { color: red; }
+		.webgl .box { color: green; }
+		.no-touchevents .box { color: red; }
+		.touchevents .box { color: green; }
+		.no-canvas .box { color: red; }
+		.canvas .box { color: green; }
+	</style>
+</head>
+<body>
+<p>以下全ての文字が「<span style="color:green;">緑</span>」の場合対応しています</p>
+<div id="supportWebGL">
+	<div class="box">webGL suport</div>
+</div>
+<div id="supportTouchevents">
+	<div class="box">Touchevents suport</div>
+</div>
+<div id="supportCanvas">
+	<div class="box">Canvas suport</div>
+</div>
+<p>想いを込めて丁寧に星をなぞってみよう</p>
+
+
+<script type="text/javascript">
+	if (Modernizr.webgl) {
+      $('#supportWebGL').addClass('webgl');
+	} else {
+      $('#supportWebGL').addClass('no-webgl');
+	}
+	if (Modernizr.touchevents) {
+		$('#supportTouchevents').addClass('touchevents');
+	} else {
+		$('#supportTouchevents').addClass('no-touchevents');
+	}
+
+	if (Modernizr.canvas) {
+		$('#supportCanvas').addClass('canvas');
+	} else {
+		$('#supportCanvas').addClass('no-canvas');
+	}
+</script>
+</body>
+</html>

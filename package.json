@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/kenmori/gimmick_sample/issues"
   },
-  "homepage": "https://github.com/kenmori/gimmick_sample#readme"
+  "homepage": "https://github.com/kenmori/gimmick_sample#readme",
+  "devDependencies": {
+    "animejs": "^2.0.1",
+    "modernizr": "^3.3.1"
+  }
 }
