@@ -24,7 +24,6 @@
 			font-size: 10px;
 		}
 		#myCanvas {
-		/*width: 188px;*/
 		overflow: hidden;
 		margin: 0 auto;
 		}
@@ -52,21 +51,18 @@
 <body>
 <img src="img/qr.png" alt="50" style="width: 50px;" />
 <p>以下全ての文字が「<span style="color:green;">緑</span>」の場合対応しています</p>
+<p>If the text below is green, your device supports this sample</p>
 <div id="supportWebGL">
-	<div class="box">webGL suport</div>
+	・<span class="box">webGL suport</span>
 </div>
 <div id="supportTouchevents">
-	<div class="box">Touchevents suport</div>
+	・<span class="box">Touchevents suport</span>
 </div>
 <div id="supportCanvas">
-	<div class="box">Canvas suport</div>
+	・<span class="box">Canvas suport</span>
 </div>
-<p>想いを込めて丁寧に星をなぞってみよう</p>
+<p>想いを込めて丁寧に星をなぞってみよう(Please trace your finger on the stars)</p>
 
-<!--<div class="wrap">-->
-	<!--<button value="カードを配り直す" class="js-distribute button button__distribute">カードを配り直す</button>-->
-	<!--<button value="やり直す" class="js-redraw button button__redraw">やり直す</button>-->
-<!--</div>-->
 <div id="myCanvas" class="off"></div>
 <script>
 	$('#myCanvas').css('display', 'none').addClass('fadeInDown').fadeIn(1500);
