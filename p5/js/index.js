@@ -1,6 +1,4 @@
-var bg;
 var position_start;
-var position_end;
 var xRenge = [];
 var yRenge = [];
 var isMovedFromStartPoint = false;
@@ -13,14 +11,7 @@ function setup(){
     sketchCanvas.parent("myCanvas");
 }
 
-
-//やり直すボタン
-// $('.js-distribute').on('click', function(){
-//     p5 = null;
-// })
-
 function draw(){
-    // background(bg);
     drawSprites();
 }
 
@@ -69,13 +60,8 @@ function touchEnded(){
         var els = document.querySelector('#defaultCanvas0');
         anime({
             targets: els,
-            // translateX: [
-            //     { value: 100, duration: 1200 },
-            //     { value: 0, duration: 800 }
-            // ],
             rotate: '10turn',
             scale: 12,
-            // backgroundColor: '#FFF',
             duration: 10000,
             loop: false
         });
