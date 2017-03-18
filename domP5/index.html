@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+	<title>p5サンプル</title>
+	<script type="text/javascript" src="js/p5/p5.min.js"></script>
+	<script type="text/javascript" src="js/p5.play.js"></script>
+	<script type='text/javascript' src='js/p5/empty-example/libraries/p5.dom.js'></script>
+	<script type="text/javascript" src="js/disableScroll.js"></script>
+	<script type="text/javascript" src="js/anime.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/fadeInDown.css"></link>
+	<script
+			src="https://code.jquery.com/jquery-1.12.4.js"
+			integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+			crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/modernizr-custom.js"></script>
+	<script type="text/javascript" src="js/disableScroll.js"></script>
+	<script type="text/javascript" src="js/touchEmulator.js"></script>
+	<!--<script src="http://hammerjs.github.io/dist/hammer.js"></script>-->
+	<script type="text/javascript" src="js/index.js"></script>
+	<style>
+		body {
+			background: #faf3f3;
+			overflow: hidden;
+			font-size: 10px;
+		}
+		.child {
+			width: 1px;
+			height: 1px;
+			background: red;
+			display: inline-block;
+		}
+		.wrap {
+			position: relative;
+			width: 100%;
+			background: #fff;
+			height: 390px;
+			overflow: hidden;
+		}
+		#parent1 {
+			position: absolute;
+			top: 200px;
+			left: 8px;
+		}
+		#parent2 {
+			position: absolute;
+			transform: rotate(-35deg);
+			top: 272px;
+			left: 28px;
+		}
+		#parent3 {
+			position: absolute;
+			transform: rotate(35deg);
+			top: 270px;
+		}
+		#parent4 {
+			position: absolute;
+			transform: rotate(-70deg);
+			top: 220px;
+			left: -38px;
+		}
+		#parent5 {
+			position: absolute;
+			transform: rotate(70deg);
+			top: 220px;
+			left: 53px;
+			display: inline-block;
+			z-index: 23;
+		}
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<div id="parent1"></div>
+	<div id="parent2"></div>
+	<div id="parent3"></div>
+	<div id="parent4"></div>
+	<div id="parent5"></div>
+</div>
+<script>
+//	function setAttributeMultiple(el, attrs){
+//		for (var key in attrs){
+//			if(key.hasOwnProperty()){
+//				el.setAttribute(key, attr[key]);
+//			}
+//		}
+//	}
+TouchEmulator();
+function log(ev) {
+	console.log(ev);
+	if(ev.type === 'touchstart'){
+		console.log("start");
+	}
+	if(ev.type === 'touchmove'){
+		console.log(ev.srcElement.firstChild.classList);
+	}
+}
+
+
+
+
+document.body.addEventListener('touchstart', log, false);
+document.body.addEventListener('touchmove', log, false);
+document.body.addEventListener('touchend', log, false);
+function createBorder(id){
+	var frag = document.createDocumentFragment();
+	for (var i = 0; i < 250; i++){
+	    var div = document.createElement('div');
+		var str = 'child child' + i;
+		div.className = str;
+		div.id = i;
+//	    var text = document.createTextNode("fafa" + i);
+//		div.appendChild(text);
+		frag.appendChild(div);
+	}
+	var sid = 'parent' + id;
+	document.getElementById(sid).appendChild(frag);
+}
+createBorder(1);
+createBorder(2);
+createBorder(3);
+createBorder(4);
+createBorder(5);
+</script>
+</body>
+</html>
