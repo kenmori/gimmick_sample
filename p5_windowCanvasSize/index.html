@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+	<title>p5サンプル</title>
+	<script type="text/javascript" src="js/p5/p5.min.js"></script>
+	<script type="text/javascript" src="js/p5.play.js"></script>
+	<script type='text/javascript' src='js/p5/empty-example/libraries/p5.dom.js'></script>
+	<script type="text/javascript" src="js/disableScroll.js"></script>
+	<script type="text/javascript" src="js/anime.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/fadeInDown.css"></link>
+	<script
+			src="https://code.jquery.com/jquery-1.12.4.js"
+			integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+			crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/modernizr-custom.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+<img src="img/qr.png" alt="50" style="width: 50px;" />
+<p>Open safari (not web view)</p>
+<p>以下全ての文字が「<span style="color:green;">緑</span>」の場合対応しています</p>
+<p>If the text below is green, your device supports this sample</p>
+<div id="supportWebGL">
+	・<span class="box">webGL suport</span>
+</div>
+<div id="supportTouchevents">
+	・<span class="box">Touchevents suport</span>
+</div>
+<div id="supportCanvas">
+	・<span class="box">Canvas suport</span>
+</div>
+
+<div id="myCanvas" class="off"></div>
+<script type="text/javascript">
+	if (Modernizr.webgl) {
+      $('#supportWebGL').addClass('webgl');
+	} else {
+      $('#supportWebGL').addClass('no-webgl');
+	}
+	if (Modernizr.touchevents) {
+		$('#supportTouchevents').addClass('touchevents');
+	} else {
+		$('#supportTouchevents').addClass('no-touchevents');
+	}
+
+	if (Modernizr.canvas) {
+		$('#supportCanvas').addClass('canvas');
+	} else {
+		$('#supportCanvas').addClass('no-canvas');
+	}
+</script>
+</body>
+</html>

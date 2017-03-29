@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+	<title>canvas</title>
+	<link rel="stylesheet" type="text/css" href="css/fadeInDown.css"></link>
+	<script
+			src="https://code.jquery.com/jquery-1.12.4.js"
+			integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+			crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/disableScroll.js"></script>
+	<script type="text/javascript" src="js/touchEmulator.js"></script>
+	<script src="http://hammerjs.github.io/dist/hammer.js"></script>
+
+	<style>
+		body {
+			background: #faf3f3;
+			overflow: hidden;
+			font-size: 10px;
+		}
+		.no-webgl .box { color: red; }
+		.webgl .box { color: green; }
+		.no-touchevents .box { color: red; }
+		.touchevents .box { color: green; }
+		.no-canvas .box { color: red; }
+		.canvas .box { color: green; }
+		body {
+			background-color: ivory;
+		}
+		#canvas {
+			border:1px solid red;
+		}
+	</style>
+</head>
+<body>
+<p>以下全ての文字が「<span style="color:green;">緑</span>」の場合対応しています</p>
+<p>If the text below is green, your device supports this sample</p>
+<div id="supportWebGL">
+	・<span class="box">webGL suport</span>
+</div>
+<div id="supportTouchevents">
+	・<span class="box">Touchevents suport</span>
+</div>
+<div id="supportCanvas">
+	・<span class="box">Canvas suport</span>
+</div>
+<div id="alert"></div>
+<canvas id="canvas" width="300" height="500"></canvas>
+<script type="text/javascript">
+	var cv = document.getElementById('canvas');
+	var ctx = cv.getContext("2d");
+
+	
+
+
+	ctx.fillStyle = "rgb(0, 141, 213)";
+	ctx.lineWidth = 2;
+
+	//一筆書きで星形のパスを描く
+	//http://www.htmq.com/canvas/fill.shtml
+//	ctx.beginPath();
+//	ctx.moveTo(90,60);
+//	ctx.lineTo(210,60);
+//	ctx.lineTo(110,130);
+//	ctx.lineTo(150,20);
+//	ctx.lineTo(190,130);
+//	ctx.closePath();
+//	ctx.closePath();
+//	ctx.stroke();
+//
+//	ctx.fill();
+//	ctx.fillStyle = "rgb(0,0, 255)";
+//	ctx.fillRect(20, 20, 50, 50);
+
+
+	ctx.beginPath();
+	// 開始角度
+	var s = 0;
+	//求めたい角度
+	var n = 90;
+	ctx.arc(100, 100, 50, s, Math.PI/4, false);
+	ctx.stroke();
+
+
+
+
+
+	//http://jsfiddle.net/m1erickson/k5KsC/
+</script>
+</body>
+</html>
